@@ -11,6 +11,7 @@ Original file is located at
 main streamlit app
 """
 import pickle
+import pickle5 as pickle
 import pandas as pd
 import streamlit as st
 from streamlit import session_state as session
@@ -40,13 +41,13 @@ def load_data():
     load and cache data
     :return: tfidf data
     """
-    tfidf_data = pd.read_csv("tfidf_data.csv", index_col=0)
+    tfidf_data = pd.read_csv("tfidf_small_df.csv", index_col=0)
     return tfidf_data
 
 
 tfidf = load_data()
 
-with open("movie_list.pickle", "rb") as f:
+with open("movie_list_small.pickle", "rb") as f:
     movies = pickle.load(f)
 
 dataframe = None
